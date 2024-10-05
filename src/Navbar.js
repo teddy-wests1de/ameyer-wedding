@@ -1,4 +1,6 @@
 import { useState } from "react";
+import openBtn from './9035889_menu_sharp_icon.svg';
+import  closeBtn from './9035757_close_sharp_icon.svg';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,8 +11,8 @@ export function Navbar() {
 
   return (
     <nav className='nav-bar'>
-      <button className='btn nav-btn' onClick={openMenu}>{isOpen ? 'x' : '='}</button>
-      <ul className='menu'>
+      <button className='btn nav-btn' onClick={openMenu}><img src={!isOpen ? openBtn : closeBtn} alt=""/></button>
+      <ul className={!isOpen ? 'menu' : 'menu open'}>
         <li className='nav-item'>
           <a href="/" className="nav-link">WEDDING</a>
         </li>
