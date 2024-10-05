@@ -1,5 +1,127 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+:root {
+  /* Variables */
+  --color-primary: #000000;
+  --color-secondary: #ffffff;
+  --color-bg-main: #fafafa;
+  --color-accent-1: #e1ccbe;
+  --color-accent-2: #696969;
+}
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: "Mulish", system-ui;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Lora", serif;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+}
+.app {
+  width: 100%;
+  padding: 0.5rem;
+}
+.header {
+  margin: 1rem 0;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex: auto;
+}
+.heading {
+  font-size: 1.4rem;
+}
+.nav-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  right: 1rem;
+  gap: 0.4rem;
+}
+.nav-link {
+  text-decoration: none;
+}
+.nav-link:visited {
+  color: black;
+}
+.nav-link::before.active {
+  content: "";
+  width: 100%;
+  height: 2px;
+}
+.btn {
+  background: transparent;
+  border: 1px solid red;
+  padding: 0.4rem;
+}
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-bg-main);
+}
+p,
+h1,
+h2 {
+  text-align: center;
+}
+
+.footer {
+  flex: auto;
+}
+.owner {
+  font-size: larger;
+}
+.author {
+  font-size: small;
+  color: var(--color-accent-2);
+}
+/* Desktop Screen Width */
+
+@media screen and (min-width: 60rem) {
+  .app {
+    background-color: rgba(255, 255, 255, 0.764);
+  }
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .heading {
+    font-size: 2.4rem;
+    font-weight: 300;
+  }
+  .menu {
+    flex-direction: row;
+  }
+  .nav-btn {
+    display: none;
+  }
 }
