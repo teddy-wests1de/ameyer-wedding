@@ -78,8 +78,10 @@ h5 {
 }
 .btn {
   background: transparent;
-  border: 1px solid red;
+  border: 1px solid var(--color-primary);
   padding: 0.4rem;
+  color: var(--color-primary);
+  cursor: pointer;
 }
 .main {
   flex: 1;
