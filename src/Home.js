@@ -1,12 +1,15 @@
-export function Main() {
+export function Home() {
 
   return (
-    <main className='main'>
+    <div className='home'>
       <p className='lead-text'>Celebrate our Big day...!</p>
-      <h2 className='title'>Amaldene Meyer - and - Leighton Jansen</h2>
+      <hr />
+      <h2 className='title'>Amaldene Meyer <span className="and-content">and</span> Leighton Jansen</h2>
       <p className='event-date'>10 March 2025</p>
       <p className='invitation'>Amaldene and Leighton joyfully request the pleasure of your company as we speak our vows and join in marriage in the presence of family and friends.</p>
-      <button className='btn'>RSVP</button>
-    </main>
+      <hr />
+      <button className='btn btn-0'>RSVP</button>
+      
+    </div>
   );
 }
