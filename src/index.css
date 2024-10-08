@@ -28,6 +28,7 @@ h3,
 h4,
 h5 {
   font-family: "Lora", serif;
+  font-weight: 300;
 }
 img {
   display: block;
@@ -103,6 +104,9 @@ img {
   padding: 0.75rem 1.4rem;
   color: var(--color-primary);
   cursor: pointer;
+  margin: 1rem 0;
+  display: block;
+  width: 100%;
 }
 
 .btn-0 {
@@ -178,16 +182,21 @@ hr {
   margin: 1rem 0;
 }
 .rsvp {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.5rem;
   background-color: var(--color-bg-main);
+  padding: 0.5rem;
+}
+label {
+  white-space: nowrap;
 }
 .rsvp > * {
-  margin: 0.5rem 0;
+  margin: 0.5rem;
 }
-input,
+input[type="text"],
+input[type="email"],
 select {
   width: 100%;
   padding: 12px 20px;
@@ -195,12 +204,20 @@ select {
   display: inline-block;
   border: 1px solid #ccc;
 }
-input [type="radio"] {
-  display: flex;
+p {
+  margin: 1rem 0;
+}
+input[type="radio"] {
+  margin-right: 0.5rem;
 }
 .form-row {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
+}
+.form-field {
+  display: flex;
+  gap: 1rem;
 }
 .footer {
   flex: auto;
@@ -219,6 +236,7 @@ input [type="radio"] {
   .app {
     background-color: rgba(255, 255, 255, 0.764);
     padding: 2rem;
+    width: 100%;
   }
   .header {
     flex-direction: column;
@@ -238,19 +256,22 @@ input [type="radio"] {
     padding: 0;
     margin: 1rem;
   }
+  button {
+    display: inline;
+    width: fit-content !important;
+  }
   .nav-btn {
     display: none;
   }
-  a.btn {
-    margin-left: 2.5rem;
-    text-decoration: none !important;
-  }
+
   .nav-link {
     text-decoration: none;
     font-size: 1rem;
     font-weight: 300;
   }
-
+  .nav-item:nth-last-child(2) {
+    margin-right: 2rem;
+  }
   .title {
     font-size: 3.75rem;
     font-weight: 400;
@@ -260,7 +281,32 @@ input [type="radio"] {
   .home {
     width: 100%;
   }
+  .wedding {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+    align-items: start;
+  }
 
+  .wedding-image img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    grid-row: 1 / span 3;
+    grid-column: 1;
+  }
+
+  .wedding-image {
+    max-width: 480px;
+  }
+
+  .rsvp {
+    width: 100%;
+  }
+  input,
+  select {
+    width: unset;
+  }
   .invitation {
     width: 30%;
   }

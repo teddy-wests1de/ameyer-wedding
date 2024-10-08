@@ -1,6 +1,8 @@
 export function Registry() {
 
   return (
-    <div>Registry</div>
+    <div><div className="title">
+      <h3>Registry</h3>
+    </div></div>
   );
 }

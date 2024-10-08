@@ -2,10 +2,10 @@ export function RSVP() {
 
     return(
         <div className="rsvp">
-            <div className="title"><h2>RSVP</h2></div>
+            <div className="title"><h3>RSVP</h3></div>
             <hr></hr>
             <div>
-                <p>Please RSVP by January 2025</p>
+                <p>RSVP by January 2025</p>
             </div>
             <div>
                 <form className="rsvp-form">
@@ -22,15 +22,16 @@ export function RSVP() {
                             <input type="email" name="email" placeholder="john.smith@gmail.com"/>
                         </div>
                     </div>
+                    <p>Will you be attending? (Required)</p>
+                    <div className="form-row">
+                        <div className="form-field"><label for="yes"> <input type="radio" id="yes" name="attending" value="yes" />Yes, I'll be there!</label></div>
+                        <div className="form-field"><label for="no"> <input type="radio" id="no" name="attending" value="no" />No, I won't be able to attend.</label></div>
+                    </div>
                     <div className="form-row">
                         <button type="submit" className="btn">Submit</button>
                     </div>
-                    <div className="form-field">
-                            <label for="yes"><input type="radio" />Yes</label>
-                            <label for="no"><input type="radio" />No</label>
-                    </div>
-                    
                 </form>
+                <p>Please note that only RSVP's from invited guests will be attended to...!</p>
             </div>
         </div>
     )
