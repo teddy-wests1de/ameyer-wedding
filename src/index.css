@@ -14,12 +14,16 @@
   box-sizing: border-box;
   list-style: none;
 }
-
+html {
+  overflow-x: hidden;
+}
 body {
   display: flex;
   justify-content: center;
   font-family: "Mulish", system-ui;
   width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 h1,
@@ -78,6 +82,7 @@ img {
   right: -100%;
   background-color: var(--color-secondary);
   padding-top: 2rem;
+  overflow: hidden;
 }
 .menu.open {
   right: 0;
