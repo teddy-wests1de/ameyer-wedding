@@ -83,6 +83,7 @@ img {
   background-color: var(--color-secondary);
   padding-top: 2rem;
   overflow: hidden;
+  transition: ease-in-out 300ms;
 }
 .menu.open {
   right: 0;
@@ -132,6 +133,8 @@ img {
 .nav-btn {
   border: none !important;
   padding: 0 !important;
+  z-index: 900;
+  margin: 0;
 }
 .home {
   flex: 1;

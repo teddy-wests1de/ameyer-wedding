@@ -7,8 +7,10 @@ import { Wedding } from './Wedding';
 import {Registry} from './Registry'
 import { Travel } from './Travel';
 import { RSVP } from './RSVP.js';
+import { Music } from './Music.js';
 
 function App() {
+
   const [currentPage, setCurrentPage] = useState('home');
   const [isOpen, setIsOpen] = useState(false);
 
@@ -24,6 +26,7 @@ function App() {
   }
   return (
     <div className="app">
+      {/* <Music /> */}
       <Header onNavigation={handleNavigation} onOpen={isOpen} openMenu={openMenu}/>
       {currentPage === 'home' && <Home />}
       {currentPage === 'wedding' && <Wedding />}
