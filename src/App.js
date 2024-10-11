@@ -4,7 +4,7 @@ import { Header } from './Header';
 import './index.css';
 import { Home } from './Home';
 import { Wedding } from './Wedding';
-import {Registry} from './Registry'
+import {Gallery} from './Gallery.js'
 import { Travel } from './Travel';
 import { RSVP } from './RSVP.js';
 import { Music } from './Music.js';
@@ -30,7 +30,7 @@ function App() {
       <Header onNavigation={handleNavigation} onOpen={isOpen} openMenu={openMenu}/>
       {currentPage === 'home' && <Home />}
       {currentPage === 'wedding' && <Wedding />}
-      {currentPage === 'registry' && <Registry />}
+      {currentPage === 'registry' && <Gallery />}
       {currentPage === 'rsvp' && <RSVP />}
 
       <Footer />

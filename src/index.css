@@ -43,7 +43,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: stretch; */
+  width: 100vw;
 }
 .app {
   width: 100%;
@@ -82,7 +82,6 @@ img {
   right: -100%;
   background-color: var(--color-secondary);
   padding-top: 2rem;
-  overflow: hidden;
   transition: ease-in-out 300ms;
 }
 .menu.open {
@@ -294,10 +293,13 @@ input[type="radio"] {
     grid-template-rows: auto auto auto;
     gap: 20px;
     align-items: start;
+    max-width: fit-content;
   }
-
+  .wedding-details {
+    max-width: 480px;
+  }
   .wedding-image img {
-    width: 50%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
     grid-row: 1 / span 3;

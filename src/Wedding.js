@@ -10,8 +10,7 @@ export function Wedding() {
         <p>
         The wedding will be held on Saturday, March 28, 2020. We'll start with a nonsectarian ceremony, then move to the hotel for the reception. Dress code will be black tie optional.
         </p>
-      </div>
-      <div>
+        <div>
         <p>
           CEREMONY
           2:00PM – 3:00PM
@@ -29,6 +28,8 @@ export function Wedding() {
           New India, 12345
         </p>
       </div>
+      </div>
+      
     </div>
   );
 }

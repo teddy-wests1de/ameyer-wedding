@@ -1,8 +1,8 @@
-export function Registry() {
+export function Gallery() {
 
   return (
     <div><div className="title">
-      <h3>Registry</h3>
+      <h3>Gallery</h3>
     </div></div>
   );
 }

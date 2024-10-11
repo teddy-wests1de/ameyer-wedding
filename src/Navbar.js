@@ -14,7 +14,7 @@ export function Navbar({onNavigation, openMenu, onOpen}) {
           <a href="/wedding" className="nav-link" onClick={onNavigation}>WEDDING</a>
         </li>
         <li className='nav-item'>
-          <a href="/registry" className="nav-link" onClick={onNavigation}>REGISTRY</a>
+          <a href="/gallery" className="nav-link" onClick={onNavigation}>GALLERY</a>
         </li>
         <li className='nav-item'>
           <a href="/rsvp" className="btn" onClick={onNavigation}>RSVP</a>
