@@ -312,6 +312,7 @@ input[type="radio"] {
 
   .rsvp {
     width: 100%;
+    padding: 2rem;
   }
   input,
   select {
