@@ -28,11 +28,10 @@ function App() {
     <div className="app">
       {/* <Music /> */}
       <Header onNavigation={handleNavigation} onOpen={isOpen} openMenu={openMenu}/>
-      {currentPage === 'home' && <Home />}
-      {currentPage === 'wedding' && <Wedding />}
-      {currentPage === 'registry' && <Gallery />}
-      {currentPage === 'rsvp' && <RSVP />}
-
+        {currentPage === 'home' && <Home />}
+        {currentPage === 'wedding' && <Wedding />}
+        {currentPage === 'registry' && <Gallery />}
+        {currentPage === 'rsvp' && <RSVP />}
       <Footer />
     </div>
   );

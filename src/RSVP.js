@@ -1,5 +1,9 @@
 import { useState } from "react";
+import { colRef } from "./firebase.js";
+import { getDocs, addDoc } from "firebase/firestore";
+
 export function RSVP() {
+    const [list, setList] = useState([]);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -9,7 +13,17 @@ export function RSVP() {
         setAttend(value);
         console.log(value);
     }
-
+    function displayList() {
+        getDocs(colRef).then(data => {
+            // console.log(data.docs)
+            const documents = data.docs.map(doc => ({
+                // console.log(doc.data().attend)
+               id: doc.id,
+               ...doc.data() 
+            }))
+            setList(documents);
+        })
+    }
     function handleSubmit(e) {
         e.preventDefault();
         const response = {
@@ -18,7 +32,19 @@ export function RSVP() {
             email,
             attend,
         }
-        console.log(response);
+        addDoc(colRef, response)
+        .then(()=>console.log("Added Success...!"));
+
+        getDocs(colRef).then(data => {
+            // console.log(data.docs)
+            const documents = data.docs.map(doc => ({
+                // console.log(doc.data().attend)
+               id: doc.id,
+               ...doc.data() 
+            }))
+            setList(documents);
+        })
+
     }
     return(
         <div className="rsvp">
@@ -52,6 +78,12 @@ export function RSVP() {
                     </div>
                 </form>
                 <p>Please note that only RSVP's from invited guests will be attended to...!</p>
+            </div>
+            <div>
+                <button className="btn">List</button>
+                {list.map(li => {
+                    <div><span>{li.firstName}</span></div>
+                })}
             </div>
         </div>
     )
