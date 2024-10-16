@@ -226,6 +226,13 @@ input[type="radio"] {
   display: flex;
   gap: 1rem;
 }
+.thank-you-message {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
 .footer {
   flex: auto;
   margin: 1rem;

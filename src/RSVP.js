@@ -8,22 +8,23 @@ export function RSVP() {
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [attend, setAttend] = useState(false);
+    const [response, setResponse] = useState(true);
 
     function handleRadioChange(value) {
         setAttend(value);
         console.log(value);
     }
-    function displayList() {
-        getDocs(colRef).then(data => {
-            // console.log(data.docs)
-            const documents = data.docs.map(doc => ({
-                // console.log(doc.data().attend)
-               id: doc.id,
-               ...doc.data() 
-            }))
-            setList(documents);
-        })
-    }
+    // function displayList() {
+    //     getDocs(colRef).then(data => {
+    //         // console.log(data.docs)
+    //         const documents = data.docs.map(doc => ({
+    //             // console.log(doc.data().attend)
+    //            id: doc.id,
+    //            ...doc.data() 
+    //         }))
+    //         setList(documents);
+    //     })
+    // }
     function handleSubmit(e) {
         e.preventDefault();
         const response = {
@@ -33,7 +34,15 @@ export function RSVP() {
             attend,
         }
         addDoc(colRef, response)
-        .then(()=>console.log("Added Success...!"));
+        .then(()=>console.log("Added Success...!"))
+        .catch(err=>console.log(err))
+        .finally(()=>{
+            setFirstName('');
+            setLastName('');
+            setEmail('');
+            setAttend(null);
+            setResponse(false)
+        })
 
         getDocs(colRef).then(data => {
             // console.log(data.docs)
@@ -53,6 +62,7 @@ export function RSVP() {
             <div>
                 <p>RSVP by January 2025</p>
             </div>
+            {response ? <>
             <div>
                 <form className="rsvp-form" onSubmit={handleSubmit}>
                     <div className="form-row">
@@ -85,6 +95,10 @@ export function RSVP() {
                     <div><span>{li.firstName}</span></div>
                 })}
             </div>
+            </> : <div className="thank-you-message">
+                <h3>Thank you for your Response...!</h3>
+                <a href="#" className="btn btn-0">Home</a>
+            </div>}
         </div>
     )
 }
