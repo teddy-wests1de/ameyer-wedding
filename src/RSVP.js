@@ -97,7 +97,9 @@ export function RSVP() {
             </div>
             </> : <div className="thank-you-message">
                 <h3>Thank you for your Response...!</h3>
-                <a href="#" className="btn btn-0">Home</a>
+                <a href="#" className="btn btn-0">
+                    
+                    Home</a>
             </div>}
         </div>
     )

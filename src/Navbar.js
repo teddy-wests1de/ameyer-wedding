@@ -1,7 +1,7 @@
 import openBtn from './9035889_menu_sharp_icon.svg';
 import  closeBtn from './9035757_close_sharp_icon.svg';
 
-export function Navbar({onNavigation, openMenu, onOpen}) {
+export function Navbar({onNavigation, openMenu, onOpen, loggedIn}) {
 
   return (
     <nav className='nav-bar'>
@@ -15,6 +15,9 @@ export function Navbar({onNavigation, openMenu, onOpen}) {
         </li>
         <li className='nav-item'>
           <a href="/gallery" className="nav-link" onClick={onNavigation}>GALLERY</a>
+        </li>
+        <li className='nav-item'>
+          <a href="/gallery" className="nav-link" onClick={onNavigation}>{loggedIn ? "LOGOUT" : "LOGIN"}</a>
         </li>
         <li className='nav-item'>
           <a href="/rsvp" className="btn" onClick={onNavigation}>RSVP</a>
