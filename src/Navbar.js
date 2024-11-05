@@ -16,13 +16,16 @@ export function Navbar({onNavigation, openMenu, onOpen, loggedIn}) {
         <li className='nav-item'>
           <a href="/gallery" className="nav-link" onClick={onNavigation}>GALLERY</a>
         </li>
+        {loggedIn ?         <li className='nav-item'>
+          <a href="/login" className="nav-link" onClick={onNavigation}>LIST</a>
+        </li> : ""
+        }
         <li className='nav-item'>
-          <a href="/gallery" className="nav-link" onClick={onNavigation}>{loggedIn ? "LOGOUT" : "LOGIN"}</a>
+          <a href="/login" className="nav-link" onClick={onNavigation}>{!loggedIn ? 'LOGIN' : 'LOGOUT'}</a>
         </li>
         <li className='nav-item'>
           <a href="/rsvp" className="btn" onClick={onNavigation}>RSVP</a>
         </li>
-        
       </ul>
     </nav>
   );
